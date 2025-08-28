@@ -1,0 +1,21 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Rust / Cargo
+target/
+**/*.rs.bk
+
+# MkDocs site
+site/
+
+# OS
+.DS_Store
+Thumbs.db
