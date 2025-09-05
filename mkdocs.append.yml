@@ -1,0 +1,7 @@
+# append these to your mkdocs.yml (or replace if you prefer)
+extra_css:
+  - assets/stylesheets/extra.css
+
+nav:
+  - Components:
+    - FFB Badge Chip: components/ffb-badge.md
