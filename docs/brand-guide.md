@@ -1,11 +1,15 @@
-# Brand Guide (Summary)
+# Brand & Logo
 
-Refer to `/brand` for files. Colors and typography:
+This page captures quick guidance for using the **REZONA (ONA)** marks.
 
-- Night `#0A0B0D`
-- Teal Resonance `#00E7E7`
-- Violet Phase `#7B61FF`
-- Snow `#F4F6F8`
-- Graphite `#1A1D22`
+## Wordmark
+Use “REZONA (ONA)” on first mention, then “ONA” thereafter. Tagline: **Stay in tune.**
 
-Fonts: Space Grotesk (headlines), Inter (body). Use the sigil for avatars and the social image for previews.
+## Logo
+- Primary: concentric‑circle sigil with central swirl.
+- Clear space: at least the height of the “O” around the mark.
+- Do not skew, stretch, or recolor outside the approved palette.
+
+## Colors
+- Core neutrals for text and UI.
+- Accent swirls: blue, cyan, yellow, orange (subtle, not neon).
