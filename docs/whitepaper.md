@@ -16,7 +16,7 @@ This revision folds in: (1) clarified validity rules for ordering, (2) an off‑
 - **Protocol / Chain:** REZONA  
 - **Ticker:** **ONA**  
 - **Tagline:** *Stay in tune.*  
-- **Official repo/site:** `<your‑user>.github.io/rezona‑ona/`  
+- **Official repo/site:** `eyemaginative.github.io/rezona‑ona/`  
 - **X (Twitter):** `@rezonahub`
 
 ---
