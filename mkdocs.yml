@@ -12,3 +12,9 @@ nav:
   - Specs:
     - Exchange Fairness Add-On: specs/exchange-fairness-addon.md
     - Fair Gateway (Deposits & Withdrawals): specs/fair-gateway.md
+extra_css:
+  - assets/stylesheets/extra.css
+  
+nav:
+  - Components:
+    - FFB Badge Chip: components/ffb-badge.md
