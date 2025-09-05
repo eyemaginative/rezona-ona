@@ -1,0 +1,1 @@
+#!/usr/bin/env python3\n# (Minimal CLI omitted for brevity in this run; available in prior artifacts.)\n

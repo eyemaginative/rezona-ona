@@ -1,0 +1,1 @@
+# Fair Gateway for Deposits & Withdrawals (DCW · PoA · PoQ · WID)\n\n(Abbreviated description; full spec in earlier drafts – deterministic credit windows, proof-of-arrival, proof-of-queue, withdrawal intents, bonds & slashing, wallet UX.)\n

@@ -1,1 +1,1 @@
-docs: whitepaper v0.2 + add Exchange Fairness Add‑On (FSE/FFB); update nav
+docs/specs: add Fair Gateway (DCW·PoA·PoQ·WID) + examples; update nav

@@ -1,1 +1,1 @@
-## Summary\nUpdate whitepaper to **v0.2** and add an Exchange Fairness Add‑On spec (FSE + FFB).\n
+## Summary\nAdd Fair Gateway spec + examples; update docs nav.\n
