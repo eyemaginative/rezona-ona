@@ -9,3 +9,5 @@ nav:
   - Home: index.md
   - Whitepaper: whitepaper.md
   - Brand Guide: brand-guide.md
+  - Specs:
+    - Exchange Fairness Add-On: specs/exchange-fairness-addon.md

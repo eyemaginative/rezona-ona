@@ -1,0 +1,1 @@
+docs: whitepaper v0.2 + add Exchange Fairness Add‑On (FSE/FFB); update nav
