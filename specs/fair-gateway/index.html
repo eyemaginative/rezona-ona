@@ -11,10 +11,8 @@
       
       
       
-        <link rel="prev" href="../../brand-guide/">
+        <link rel="prev" href="../exchange-fairness-addon/">
       
-      
-        <link rel="next" href="../fair-gateway/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Exchange Fairness Add-On - REZONA (ONA)</title>
+        <title>Fair Gateway (Deposits & Withdrawals) - REZONA (ONA)</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exchange-fairness-addon-fse-ffb" class="md-skip">
+        <a href="#fair-gateway-for-deposits-withdrawals-dcw-poa-poq-wid" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exchange Fairness Add-On
+              Fair Gateway (Deposits & Withdrawals)
             
           </span>
         </div>
@@ -301,6 +299,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../exchange-fairness-addon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exchange Fairness Add-On
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -318,36 +339,13 @@
   
   
   <span class="md-ellipsis">
-    Exchange Fairness Add-On
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fair-gateway/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
     Fair Gateway (Deposits & Withdrawals)
     
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -376,8 +374,16 @@
 
 
 
-<h1 id="exchange-fairness-addon-fse-ffb">Exchange Fairness Add‑On (FSE + FFB)</h1>
-<p>(Full spec text as provided in earlier bundle — commit/reveal logs, badge rules, bridge gating, and verification notes.)</p>
+<h1 id="fair-gateway-for-deposits-withdrawals-dcw-poa-poq-wid">Fair Gateway for Deposits &amp; Withdrawals (DCW · PoA · PoQ · WID)</h1>
+<p><strong>Goal:</strong> Remove opaque timing and reordering from centralized deposit/withdraw queues by making them <strong>deterministic, auditable, and penalizable</strong> when these flows touch the chain.</p>
+<p>This spec defines four interoperable pieces:</p>
+<ul>
+<li><strong>DCW — Deterministic Credit Window:</strong> For each asset, a venue publishes "credit after N confirmations or T seconds (whichever later)" and posts a service bond. Missing the deadline is slashable.</li>
+<li><strong>PoA — Proof‑of‑Arrival:</strong> A light proof that a deposit reached <code>N</code> confirmations on its origin chain (SPV for UTXO chains, header+receipt for EVM). Starts the DCW clock.</li>
+<li><strong>PoQ — Proof‑of‑Queue:</strong> A rolling Merkle <strong>commit→reveal</strong> of the <em>exact order</em> of <strong>deposit credits</strong> and <strong>withdraw broadcasts</strong> with monotonic sequence numbers.</li>
+<li><strong>WID — Withdrawal Intent with Deadline:</strong> When a user requests a withdrawal, the venue submits a signed intent including a <strong>max broadcast time</strong>. Missing it is slashable.</li>
+</ul>
+<p>(Full spec continues with interfaces, schemas, rules, penalties, UX, and edge cases.)</p>
 
 
 
