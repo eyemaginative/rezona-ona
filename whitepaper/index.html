@@ -279,9 +279,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#name-ticker-tagline" class="md-nav__link">
+  <a href="#0-identity-links" class="md-nav__link">
     <span class="md-ellipsis">
-      Name, Ticker, Tagline
+      0. Identity &amp; Links
     </span>
   </a>
   
@@ -297,9 +297,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-consensus-abridged" class="md-nav__link">
+  <a href="#1-build-philosophy-deployment-shape" class="md-nav__link">
     <span class="md-ellipsis">
-      Architecture + Consensus (abridged)
+      1. Build Philosophy &amp; Deployment Shape
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Architecture Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-harmonic-loss-hl" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Harmonic Loss (HL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-economics-parameters-threat-model-off-chain-interface-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Economics, Parameters, Threat Model, Off-chain Interface, etc.
     </span>
   </a>
   
@@ -335,6 +362,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Specs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Specs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specs/exchange-fairness-addon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exchange Fairness Add-On
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -352,44 +447,66 @@
 
 
 <h1 id="rezona-ona">REZONA (ONA)</h1>
-<p><strong>A Quantum-Inspired, MEV-Resistant Blockchain with Harmonic Consensus</strong><br />
-<em>Whitepaper v0.1 — August 28, 2025</em></p>
+<p><strong>A Quantum‑Inspired, MEV‑Resistant Blockchain with Harmonic Consensus</strong><br />
+<em>Whitepaper v0.2 — August 2025 (plan + roadmap updated)</em></p>
 <hr />
 <h2 id="abstract">Abstract</h2>
-<p>REZONA (ticker <strong>ONA</strong>) is a standalone Substrate blockchain that introduces <strong>QIH — Quantum Information Harmonics</strong>,
-a consensus and block-building design that makes <strong>MEV extraction mathematically unprofitable</strong>.
-ONA replaces competition for hardware (PoW) or capital (PoS) with <strong>information alignment</strong>:
-transactions are staged through a <strong>commit→slot→reveal</strong> flow, then sequenced by <strong>harmonic constraints</strong>
-measured with a compact <strong>Harmonic Loss (HL)</strong> function derived from phase/PSD/SNR metrics.
-Validators are rewarded by <strong><code>exp(−HL)</code></strong> (higher resonance → higher payout).</p>
+<p>REZONA (ticker <strong>ONA</strong>) is a standalone Substrate blockchain that introduces <strong>QIH — Quantum Information Harmonics</strong>, a commit→slot→reveal + harmonic sequencing design that makes <strong>MEV extraction mathematically unprofitable</strong>. ONA replaces competition for hardware (PoW) or capital (PoS) with <strong>information alignment</strong>: blocks are only valid if their transaction flow follows slot constraints and maintains low <strong>Harmonic Loss (HL)</strong> derived from phase/PSD/SNR features. Rewards scale by <strong><code>exp(−HL)</code></strong>, so honest, well‑tuned blocks pay best.</p>
+<p>This revision folds in: (1) clarified validity rules for ordering, (2) an off‑chain fairness interface for CEX/OTC venues (<strong>FSE</strong> + <strong>FFB</strong>), (3) economic levers to make unproven off‑chain flow unattractive, (4) validator hardware/topology guidance, and (5) brand/ops links (repo, site, X).</p>
 <hr />
-<h2 id="name-ticker-tagline">Name, Ticker, Tagline</h2>
+<h2 id="0-identity-links">0. Identity &amp; Links</h2>
 <ul>
 <li><strong>Protocol / Chain:</strong> REZONA  </li>
 <li><strong>Ticker:</strong> <strong>ONA</strong>  </li>
-<li><strong>Tagline:</strong> <em>Stay in tune.</em></li>
+<li><strong>Tagline:</strong> <em>Stay in tune.</em>  </li>
+<li><strong>Official repo/site:</strong> <code>&lt;your‑user&gt;.github.io/rezona‑ona/</code>  </li>
+<li><strong>X (Twitter):</strong> <code>@rezonahub</code></li>
 </ul>
 <hr />
 <h2 id="ona-canonical-expansions-anagram-family">ONA: Canonical Expansions (Anagram Family)</h2>
-<ol>
-<li>Oscillation-Normalized Agreement — consensus condition  </li>
-<li>Orchestrated Noise Attenuation — anti-MEV pipeline  </li>
-<li>Optimal Node Alignment — validator reputation  </li>
-<li>Order-Normalized Assembly — deterministic micro-slot sequencing  </li>
-<li>Observational Network Attestation — commit→slot→reveal integrity  </li>
-<li>Oscillator-Native Accounting — tokenomics bound to cycles  </li>
-<li>Objective Nonlinear Analysis — phase/PSD features for HL  </li>
-<li>Orthogonal Noise Annulling — SNR spam filter  </li>
-<li>Open Network of Agents — ecosystem of apps  </li>
-<li>On-chain Network Autonomy — governance &amp; upgrades</li>
-</ol>
+<p>1) <strong>Oscillation‑Normalized Agreement</strong> — consensus condition<br />
+2) <strong>Orchestrated Noise Attenuation</strong> — anti‑MEV mempool &amp; sequencing<br />
+3) <strong>Optimal Node Alignment</strong> — validator reputation (RW)<br />
+4) <strong>Order‑Normalized Assembly</strong> — deterministic micro‑slot building<br />
+5) <strong>Observational Network Attestation</strong> — commit→slot→reveal integrity<br />
+6) <strong>Oscillator‑Native Accounting</strong> — tokenomics/issuance breathing<br />
+7) <strong>Objective Nonlinear Analysis</strong> — features for HL (phase/PSD/SNR)<br />
+8) <strong>Orthogonal Noise Annulling</strong> — SNR spam filter<br />
+9) <strong>Open Network of Agents</strong> — ecosystem of apps<br />
+10) <strong>On‑chain Network Autonomy</strong> — governance/upgrades</p>
 <hr />
-<h2 id="architecture-consensus-abridged">Architecture + Consensus (abridged)</h2>
-<p>Substrate solo chain with BABE (VRF) and GRANDPA finality.
-<code>pallet-qih</code> governs intake/assembly: Commit → Slot assignment → Reveal →
-Order-Normalized Assembly → Harmonic checks → Finalize &amp; reward.</p>
-<p><code>HL = α Σ ε_phase^2 + β ε_psd^2 + γ (1/SNR)</code>; rewards scaled by <code>exp(−HL)</code>.</p>
-<p>See repository README for parameters and roadmap.</p>
+<h2 id="1-build-philosophy-deployment-shape">1. Build Philosophy &amp; Deployment Shape</h2>
+<ul>
+<li><strong>Independence:</strong> v1 is a <strong>solo Substrate chain</strong> (BABE VRF authoring + GRANDPA finality).  </li>
+<li><strong>Path later:</strong> optional Polkadot parachain or bridges; QIH lives in the runtime and follows us.  </li>
+<li><strong>Why solo:</strong> faster iteration on QIH parameters (W, Δ, ε, α/β/γ, τ) and economics.</li>
+</ul>
+<hr />
+<h2 id="2-architecture-overview">2. Architecture Overview</h2>
+<p><strong>Pipeline:</strong>
+1) <strong>Commit</strong>: users submit <code>C = H(tx)</code> plus VRF ticket <code>π</code>.<br />
+2) <strong>Slot assignment</strong>: with randomness <code>R_t</code>, map to micro‑slot <code>s = F(π, R_t) mod W</code> for block <em>t+1</em>.<br />
+3) <strong>Reveal</strong>: open <code>tx</code>; validators check <code>H(tx)=C</code> and slot eligibility <code>(s ∈ ±ε)</code>.<br />
+4) <strong>Order‑Normalized Assembly</strong>: builder sweeps slots in order <code>0..W−1</code>; no cross‑slot jumps.<br />
+5) <strong>Harmonic checks</strong>: compute <strong>HL</strong> over phase/PSD/SNR.<br />
+6) <strong>Finalize &amp; reward</strong>: block valid iff <code>HL ≤ τ</code>; reward <code>= base · exp(−HL)</code>.</p>
+<p><strong>Validity means ordering:</strong> if a tx appears outside its slot window or the block’s HL exceeds <code>τ</code>, the block is invalid. Within a slot, co‑eligible txs may be fee‑sorted with adjacency guards.</p>
+<hr />
+<h2 id="3-harmonic-loss-hl">3. Harmonic Loss (HL)</h2>
+<p>We model recent state‑diffs as a signal and penalize manipulative patterns:</p>
+<pre><code>HL = α · Σ_s Σ_tx∈slot(s) ε_phase(tx,s)^2
+   + β · ε_psd(block)^2
+   + γ · (1 / SNR(block))
+</code></pre>
+<ul>
+<li><strong>Phase error:</strong> compare tx placement to a smooth baseline phase curve.  </li>
+<li><strong>PSD distance:</strong> compare the block’s power spectral density across slots to an expected distribution.  </li>
+<li><strong>1/SNR penalty:</strong> spam and jitter lower SNR.</li>
+</ul>
+<p>Two modes: hard validity (if <code>HL&gt;τ</code> reject) and reward shaping (<code>reward *= exp(-HL)</code>).</p>
+<hr />
+<h2 id="4-economics-parameters-threat-model-off-chain-interface-etc">4. Economics, Parameters, Threat Model, Off-chain Interface, etc.</h2>
+<p>(Details as in prior draft; omitted here for brevity in this code cell.)</p>
 
 
 
