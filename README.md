@@ -1,15 +1,10 @@
-# REZONA (ONA) — Stay in tune
+# REZONA (ONA)
 
-**REZONA** is a standalone Substrate blockchain that implements **QIH — Quantum Information Harmonics**:
-a commit→slot→reveal + harmonic sequencing design that makes **MEV extraction mathematically unprofitable**.
+**Harmonic, MEV‑resistant L1 with Oscillation‑Normalized Agreement (ONA).**  
+Commit → slot → reveal; blocks must respect micro‑slot ordering and minimize Harmonic Loss (HL).
 
-- **Ticker:** `ONA`
-- **Tagline:** *Stay in tune.*
-- **Docs/Whitepaper:** See [`docs/whitepaper.md`](docs/whitepaper.md)
-- **Brand:** See [`/brand`](brand/) for logos, colors, and social assets.
+- 📄 **Whitepaper:** `docs/whitepaper.md`
+- 📚 **Docs site:** published via GitHub Pages
+- 🧭 **Specs:** Fair‑Settlement Envelope (FSE/FFB), Fair Gateway (DCW · PoA · PoQ · WID)
 
-## Quick links
-- Technology pillars: **Oscillation‑Normalized Agreement**, **Orchestrated Noise Attenuation**, **Optimal Node Alignment**.
-- Block time ~2s • Micro‑slots per block (W) = 256 • Commit→reveal Δ = 1 block • Rewards × `exp(−HL)`.
-
-> **Status:** Public repo skeleton for website/docs/brand. The Substrate node (with `pallet-qih`) will live in a separate repo.
+> Note: We previously used the informal term “QIH / Quantum Information Harmonics” in brainstorming. The protocol name is now **ONA — Oscillation‑Normalized Agreement**. See *Credits & Related Work* in the whitepaper.

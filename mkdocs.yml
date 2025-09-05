@@ -1,5 +1,5 @@
 site_name: REZONA (ONA)
-site_description: REZONA — a quantum-inspired, MEV-resistant blockchain.
+site_description: REZONA — a harmonic, MEV-resistant blockchain.
 theme:
   name: material
   features:
@@ -11,3 +11,4 @@ nav:
   - Brand Guide: brand-guide.md
   - Specs:
     - Exchange Fairness Add-On: specs/exchange-fairness-addon.md
+    - Fair Gateway (Deposits & Withdrawals): specs/fair-gateway.md
