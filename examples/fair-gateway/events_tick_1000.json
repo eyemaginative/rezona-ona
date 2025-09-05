@@ -1,7 +1,7 @@
 [
   {
     "type": "deposit_credit",
-    "venue": "rezona-cex-1",
+    "venue": "example-cex-1",
     "venue_seq": 1001,
     "uid": "evt-1001",
     "asset": "DOGE",
@@ -10,13 +10,14 @@
     "dest_addr": "",
     "source_txid": "txdogeA",
     "chain_id": "doge",
-    "deadline": 1757066395,
-    "ts_planned": 1757066335,
-    "sig": "ven-sig-placeholder"
+    "deadline": 1757073797,
+    "ts_planned": 1757073737,
+    "risk_flag": null,
+    "sig": "venue-sig-placeholder"
   },
   {
     "type": "withdraw_broadcast",
-    "venue": "rezona-cex-1",
+    "venue": "example-cex-1",
     "venue_seq": 1002,
     "uid": "evt-1002",
     "asset": "DOGE",
@@ -25,8 +26,9 @@
     "dest_addr": "Dxyz...",
     "source_txid": "txdogeW",
     "chain_id": "doge",
-    "deadline": 1757066575,
-    "ts_planned": 1757066475,
-    "sig": "ven-sig-placeholder"
+    "deadline": 1757073977,
+    "ts_planned": 1757073877,
+    "risk_flag": null,
+    "sig": "venue-sig-placeholder"
   }
 ]
