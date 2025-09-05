@@ -17,7 +17,7 @@ This revision removes all references to “QIH / Quantum Information Harmonics�
 - **Ticker:** **ONA**  
 - **Consensus:** **Oscillation‑Normalized Agreement (ONA)**  
 - **Tagline:** *Stay in tune.*  
-- **Official site:** `<your-username>.github.io/rezona-ona/`  
+- **Official site:** `eyemaginative.github.io/rezona-ona/`  
 - **X (Twitter):** `@rezonahub`
 
 ---
