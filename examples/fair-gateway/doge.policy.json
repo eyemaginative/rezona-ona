@@ -1,0 +1,21 @@
+{
+  "venue": "example-cex-1",
+  "assets": {
+    "DOGE": {
+      "N_conf": 20,
+      "T_max": 3600
+    },
+    "BTC": {
+      "N_conf": 2,
+      "T_max": 1800
+    },
+    "ETH": {
+      "N_conf": 12,
+      "T_max": 900
+    }
+  },
+  "bond": {
+    "amount": "10000 ONA",
+    "address": "ONA1...venuebond"
+  }
+}
