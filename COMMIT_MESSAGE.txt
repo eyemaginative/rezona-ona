@@ -1,1 +1,0 @@
-docs: rename QIH→ONA across docs; update site description & README; add attributions
