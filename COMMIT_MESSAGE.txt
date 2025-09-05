@@ -1,0 +1,1 @@
+docs/specs: add Exchange Fairness Add‑On (FSE+FFB) + At‑a‑glance; add FFB Badge component + CSS; wire via extra_css and nav

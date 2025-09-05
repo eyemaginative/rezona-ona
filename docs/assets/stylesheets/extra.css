@@ -1,0 +1,10 @@
+.md-typeset .ffb-badge{
+  display:inline-block; padding:.15rem .45rem; border-radius:.5rem;
+  font-weight:600; font-size:.8rem; letter-spacing:.02em;
+  border:1px solid rgba(0,0,0,.08); box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+.md-typeset .ffb-badge.grade-A{ background:#e6ffed; color:#056c3b; border-color:#baf2c3;}
+.md-typeset .ffb-badge.grade-B{ background:#eef6ff; color:#0b63c4; border-color:#c8e1ff;}
+.md-typeset .ffb-badge.grade-C{ background:#fff9e6; color:#7a5d00; border-color:#fde3a7;}
+.md-typeset .ffb-badge.grade-D{ background:#fff0f0; color:#9c2e2e; border-color:#f3b7b7;}
+.md-typeset .ffb-badge.grade-F{ background:#ffe8e8; color:#7a0000; border-color:#ef9a9a;}
