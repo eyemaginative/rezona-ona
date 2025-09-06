@@ -1,7 +1,7 @@
 # REZONA (ONA)
 
 **A Harmonic, MEV‑Resistant Blockchain with Oscillation‑Normalized Agreement**  
-*Whitepaper v0.2r — Terminology update (replaces “QIH” with “ONA consensus”)*
+*Whitepaper v0.2r — Terminology update*
 
 ---
 
@@ -124,7 +124,7 @@ M1 Commit/Reveal → M2 Slot‑enforced assembly → M3 Harmonic Loss + telemetr
 ---
 
 ## 10. Credits & Related Work
-The term **“Quantum Information Harmonics”** has been used informally in the community to discuss harmonic‑style reasoning about information. We draw inspiration from that general theme, and we gratefully acknowledge **Jason Padgett** for popularizing geometric/harmonic visualizations that motivated aspects of our communication and branding. This project’s protocol, terminology, and consensus—**Oscillation‑Normalized Agreement (ONA)**—are original and specific to this chain.
+The term **“Quantum Information Harmonics or QIH”** has been used informally in the community to discuss harmonic‑style reasoning about information. We draw inspiration from that general theme, and we gratefully acknowledge **Jason Padgett** for popularizing geometric/harmonic visualizations that motivated aspects of our communication and branding. This project’s protocol, terminology, and consensus—**Oscillation‑Normalized Agreement (ONA)**—are original and specific to this chain.
 
 ---
 
