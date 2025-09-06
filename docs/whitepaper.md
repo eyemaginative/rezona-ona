@@ -181,7 +181,7 @@ See Exchange Fairness Add-On (FSE + FFB) for the commit→reveal queue, deadline
 ## 9. Implementation Plan
 M1 Commit/Reveal → M2 Slot‑enforced assembly → M3 Harmonic Loss + telemetry → M4 Rewards/fees → M5 FSE/FFB pallets → M6 UX tooling.
 
-**9.1 Security considerations**
+## 9.1 Security considerations
 
 **Randomness & VRF:** R_t must be unbiased and unpredictable; verify VRF proofs on reveal.
 
