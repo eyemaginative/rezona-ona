@@ -17,9 +17,6 @@ nav:
   - Specs:
     - Fair Gateway (Deposits & Withdrawals): specs/fair-gateway.md
     - Exchange Fairness Add-On (FSE + FFB): specs/exchange-fairness-addon.md
-      - Specs:
-    - Fair Gateway (Deposits & Withdrawals): specs/fair-gateway.md
-    - Exchange Fairness Add-On (FSE + FFB): specs/exchange-fairness-addon.md
     - Fee Router (Multi-Asset Fees): specs/fee-router.md
     - Liquidity Architecture: specs/liquidity-architecture.md
 
