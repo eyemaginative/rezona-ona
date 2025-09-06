@@ -127,6 +127,14 @@ HL = α · Σ_s Σ_{tx∈slot(s)} ε_phase(tx,s)^2
 - **Rewards:** `reward = base · exp(−HL) · RW` where **RW** is a smoothed reputation (EMA of `exp(−HL)`), bounded (e.g., 0.5×–1.2×).  
 - **Resonance Index (RI)** (narrow modulation): `issuance = base · (0.75 + 0.25 · RI)` with `RI∈[0,1]` from network‑wide HL.
 
+### 4.1 Multi-Asset Fees & Operational Reserves
+
+ONA remains the fee/bond unit; however, a **fee router** may accept BTC/ETH/SOL for user convenience:
+- For each accepted asset `a`, the router takes `amount_in`, settles `ona_needed` to the chain, and retains a small `skim_a` as **operational reserve** (`0 ≤ skim_a ≤ 0.50%`, configurable).
+- Reserves are **not** investment pools; they cover routing slippage, gas sponsorship, bridge float, and auditor costs.
+- Validators are paid in ONA; only the router handles foreign-asset intake.
+
+
 ---
 
 ## 5. Parameters (initial defaults)
@@ -273,3 +281,61 @@ The project may update protocol code and documentation; such updates do not cons
 Software is provided “AS IS,” without warranties or conditions of any kind. See LICENSE for details.
 
 ONA is used for fees/gas, bonds/slashing, and potentially staking/validator collateral if later enabled. These are technical functions, not investment contracts.
+
+**Note on foreign assets:** Any BTC/ETH/SOL retained by the protocol are **operational reserves** for routing/bridge safety and auditor funding, not investment instruments and not marketed for profit.
+
+
+## 12. Cross-Asset Liquidity & Utility-Driven Inflows
+
+ONA’s design can attract BTC/ETH/SOL and other L1 assets **without** promising price or yield by making those assets *useful* inside the ecosystem.
+
+### 12.1 Principles
+- **Utility, not investment.** All mechanisms are framed as fees, bonds, credits, and service tiers.
+- **Ordering as validity.** ONA’s inclusion rules + HL penalties make settlement predictable, which venues and market makers value.
+- **Operational reserves.** Any retained foreign assets are earmarked for network operations (not an investment program).
+
+### 12.2 Service Bonds in BTC/ETH/SOL (FSE + FFB)
+Venues (CEXs, bridges, custodial wallets) post **service bonds** in top L1 assets to participate in FSE/FFB.
+- **Why:** Higher badge grade (A/B) unlocks fee rebates, fast lanes, higher limits.
+- **Flow:** Venue deposits → maintains grade → attracts flow → earns rebates.
+- **Enforcement:** Bonds are slashed for objective violations (missed deadlines, missing credits).
+
+### 12.3 Multi-Asset Gas & Fee Router
+Users may pay ONA-denominated fees with BTC/ETH/SOL via a **router**:
+- Escrow foreign asset → quote → settle ONA on chain → retain tiny **reserve skim** in the foreign asset for operations.
+- Improves first-use UX; validators still receive ONA.
+
+### 12.4 Canonical Wrapped Assets (wBTC/wETH/wSOL)
+Audited bridges or light-client proofs mint canonical wrapped assets on ONA.
+- **Why bridge:** Apps on ONA treat wraps as first-class with faster, fair settlement.
+- **Fee:** Per-transfer fee in the origin asset; a slice funds **safety reserves** and auditors.
+
+### 12.5 Protocol-Owned Liquidity via Utility Bonding
+Accept BTC/ETH/SOL as **utility bonds** in exchange for **time-vested fee credits** (gas coupons, DA credits, bridge priority).
+- Credits reduce operating cost for heavy users; no emissions, no APY language.
+
+### 12.6 Blockspace Auctions (Any-Asset Settlement)
+Sealed-bid auctions for priority blockspace or batch settlement; winners settle in BTC/ETH/SOL.
+- Portion retained as operational reserve; rest routed to ONA via the fee router.
+
+### 12.7 Routing Rebates with ve-ONA (No Yield Farming)
+Lock ONA to steer **rebate budgets** toward routes/pools that deepen BTC/ETH/SOL liquidity.
+- LPs earn **fee rebates/credits** (not emissions); improves execution quality.
+
+### 12.8 Validator/AVS Multi-Asset Collateral (Advanced)
+For specific services (e.g., ordering oracle), allow LSTs/LRTs as collateral with explicit **slashing**.
+- Opt-in, narrowly scoped; publish conditions.
+
+### 12.9 RFQ with Bonded Market Makers
+MMs bond BTC/ETH/SOL to quote; failure → **slash**; success → **rebates** and preferred routing.
+
+### 12.10 MVP (initial delivery)
+1) **FSE/FFB venue bonds** (accept BTC/ETH/SOL; slashing; badge grades).  
+2) **Multi-asset fee router** (pay fees in BTC/ETH/SOL; keep tiny reserve skim).  
+3) **One canonical wrapped asset** (e.g., wETH) with fairness guarantees.
+
+### 12.11 Accounting & Communications
+- Tag all foreign-asset balances as **operational reserves** dedicated to fee routing, gas sponsorship, bridge float, and auditors.
+- Public dashboards should show reserves, slashes, and badge grades.
+- Avoid investment language (no “yield/returns/listings”).
+
