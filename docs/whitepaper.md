@@ -6,9 +6,7 @@
 ---
 
 ## Abstract
-This document describes a standalone Substrate blockchain that introduces **ONA consensus — Oscillation‑Normalized Agreement**, a commit→slot→reveal + harmonic sequencing design that makes **MEV extraction uneconomic**. ONA replaces competition for hardware (PoW) or capital (PoS) with **information alignment**: blocks are only valid if their transaction flow respects **micro‑slot ordering** and achieves low **Harmonic Loss (HL)** derived from phase/PSD/SNR features. Rewards scale by **`exp(−HL)`**, so honest, well‑tuned blocks pay best.
-
-This revision removes all references to “QIH / Quantum Information Harmonics” as a protocol name. The underlying ideas are preserved and fully attributable to our own **ONA consensus** design.
+This document describes a standalone Substrate blockchain that introduces ONA consensus — Oscillation-Normalized Agreement, a commit→slot→reveal + harmonic sequencing design that makes MEV extraction uneconomic. ONA replaces competition for hardware (PoW) or capital (PoS) with information alignment: blocks are valid only if their transaction flow respects micro-slot ordering and achieves low Harmonic Loss (HL) derived from phase/PSD/SNR features. Rewards scale by exp(−HL), so honest, well-tuned blocks pay best.
 
 ---
 
@@ -17,7 +15,7 @@ This revision removes all references to “QIH / Quantum Information Harmonics�
 - **Ticker:** **ONA**  
 - **Consensus:** **Oscillation‑Normalized Agreement (ONA)**  
 - **Tagline:** *Stay in tune.*  
-- **Official site:** `eyemaginative.github.io/rezona-ona/`  
+- **Official site:** `https://eyemaginative.github.io/rezona-ona/`  
 - **X (Twitter):** `@rezonahub`
 
 ---
@@ -54,20 +52,72 @@ This revision removes all references to “QIH / Quantum Information Harmonics�
 
 **Ordering is validity:** if a tx appears outside its slot window or the block’s HL exceeds `τ`, the block is invalid. Inside a slot, co‑eligible txs may be fee‑sorted with adjacency guards.
 
+## 2.1 Notation (cheat sheet)
+
+| **Symbol**    | **Meaning**                                            |
+| --------- | -------------------------------------------------- |
+| `W`       | Micro-slots per block (e.g., 256)                  |
+| `ε`       | Grace window in slots (e.g., ±1)                   |
+| `Δ`       | Commit→reveal delay in blocks (e.g., 1)            |
+| `τ`       | Harmonic Loss validity threshold                   |
+| `α, β, γ` | HL coefficients (phase, PSD, SNR)                  |
+| `R_t`     | Block-level randomness for slot mapping            |
+| `π`       | User VRF ticket included at commit                 |
+| `s`       | Assigned micro-slot for a tx in block *t+1*        |
+| `HL`      | Harmonic Loss for a candidate block                |
+| `RW`      | Validator Resonance Weight (reputation multiplier) |
+
+## 2.2 Validity & payout rules (normative)
+
+A block MUST satisfy all of the following to be valid:
+
+**Commit→Reveal binding**
+Every revealed transaction tx MUST match a prior commitment C = H(tx) made at or before t−Δ.
+
+**Slot eligibility**
+Let s = F(π, R_t) mod W be the assigned micro-slot for tx. The block MUST place tx within the window s ± ε. Inclusion outside that window makes the block invalid.
+
+**Order-Normalized Assembly**
+The builder MUST sweep slots in ascending order 0..W−1. Cross-slot reorders (e.g., inserting a slot-8 tx while building slot-5) are invalid.
+
+**Harmonic Loss bound**
+Compute HL for the block. If HL > τ, the block is invalid.
+
+**Commit integrity**
+All commitments used in the block MUST be unique and referenced at most once.
+
+**Payout shaping (applies after validity):**
+
+**Author reward:**
+reward = base · exp(−HL) · RW_author
+
+**Resonance Weight update (EMA, clamped):**
+RW_author ← clamp( RW_min,
+                   RW_max,
+                   (1−λ)·RW_author + λ·exp(−HL) )
+with suggested λ = 0.1, RW_min=0.5, RW_max=1.2.
+
+**Rationale:** making ordering part of validity plus reward curvature removes profitable MEV paths; honest sequencing dominates.
+
 ---
 
 ## 3. Harmonic Loss (HL)
-We model the per‑block transaction cadence as a signal and penalize manipulative patterns:
-```
-HL = α · Σ_s Σ_tx∈slot(s) ε_phase(tx,s)^2
-   + β · ε_psd(block)^2
-   + γ · (1 / SNR(block))
-```
-- **Phase error**: tx vs predicted slot‑phase curve φ.  
-- **PSD distance**: Wasserstein/EMD of expected vs realized slot distribution.  
-- **SNR penalty**: discourages spam/noise.
 
-Two enforcement modes: **hard validity** (`HL>τ` → reject) and **reward shaping** (`reward *= exp(−HL)`).
+**We model per-block transaction cadence as a signal and penalize manipulative patterns:**
+HL = α · Σ_s Σ_{tx∈slot(s)} ε_phase(tx,s)^2
+   + β · ε_psd(block)^2
+   + γ · (1 / max(SNR(block), ε_snr))
+**Phase error (ε_phase):** deviation from the predicted slot-phase trajectory φ(s) for eligible txs.
+
+**PSD distance (ε_psd):** Wasserstein/EMD between expected vs realized per-slot distribution over a window K.
+
+**SNR term:** suppresses spam/noise; ε_snr ≈ 1e−9 avoids division by zero.
+
+**Enforcement modes:**
+
+**Hard validity:** reject the block if HL > τ.
+
+**Reward shaping:** for valid blocks, scale payout by exp(−HL).
 
 ---
 
@@ -90,6 +140,14 @@ Two enforcement modes: **hard validity** (`HL>τ` → reject) and **reward shapi
 - **Decimals:** 9 (1 ONA = 1e9 plancks)  
 - **SS58:** 42 (Substrate default)
 
+## 5.1 Choosing parameters (testnet starting points)
+
+W = 256, ε = 1, Δ = 1, τ = 1.0
+
+α = 1.0, β = 0.5, γ = 0.2, K = 128
+
+Block time ≈ 2s; tune τ to target ~95–99% acceptance for honest builders.
+
 ---
 
 ## 6. Threat Model & Defenses
@@ -109,6 +167,8 @@ We can’t *ban* off‑chain trades, but we can make them **provably fair** when
 
 **FSE — Fair‑Settlement Envelope**: commit/reveal logs for venues + non‑transferable **FFB — Fair‑Flow Badge**. See separate spec.
 
+See Exchange Fairness Add-On (FSE + FFB) for the commit→reveal queue, deadlines, bond/slash, and venue badge rules. The chain can gate bridges and fee tiers by badge grade to prefer venues that honor on-chain time.
+
 ---
 
 ## 8. Validators (Optimal Node Alignment)
@@ -121,10 +181,22 @@ We can’t *ban* off‑chain trades, but we can make them **provably fair** when
 ## 9. Implementation Plan
 M1 Commit/Reveal → M2 Slot‑enforced assembly → M3 Harmonic Loss + telemetry → M4 Rewards/fees → M5 FSE/FFB pallets → M6 UX tooling.
 
+**9.1 Security considerations**
+
+**Randomness & VRF:** R_t must be unbiased and unpredictable; verify VRF proofs on reveal.
+
+**Clocking:** use chain time for deadlines; bound acceptable drift for external proofs.
+
+**Spam bounds:** cap per-slot inclusions; SNR term discourages flood patterns.
+
+**Censorship:** skipping eligible txs increases HL and erodes RW; multi-epoch reputation reduces cheap identity resets.
+
+**Economic games:** sandwich/front-run require cross-slot distortions that violate validity or incur high HL, making them uneconomic.
+
 ---
 
 ## 10. Credits & Related Work
-The term **“Quantum Information Harmonics or QIH”** has been used informally in the community to discuss harmonic‑style reasoning about information. We draw inspiration from that general theme, and we gratefully acknowledge **Jason Padgett** for popularizing geometric/harmonic visualizations that motivated aspects of our communication and branding. This project’s protocol, terminology, and consensus—**Oscillation‑Normalized Agreement (ONA)**—are original and specific to this chain.
+We acknowledge prior community discussions around harmonic-style reasoning about information and thank Jason Padgett for popularizing geometric/harmonic visualizations that influenced our communication and branding. The protocol and terminology presented here—Oscillation-Normalized Agreement (ONA)—are original to this project.
 
 ---
 
