@@ -200,5 +200,76 @@ We acknowledge prior community discussions around harmonic-style reasoning about
 
 ---
 
-## 11. Compliance
-Experimental software; not investment advice.
+## 11. Compliance & Legal
+
+Important: This whitepaper is for information only. It is not legal, financial, or tax advice. Building, running, or using the protocol may have legal implications that vary by jurisdiction and over time. Consult qualified counsel before taking any action. Nothing herein constitutes an offer to sell, a solicitation to buy, or a recommendation regarding any asset.
+
+## 11.1 Nature and Purpose of ONA
+
+ONA is the native unit of account used by the network to pay for compute and storage (gas/fees), to post bonds for certain actions (e.g., venue service bonds in the FSE/FFB spec), and to meter on-chain resources.
+
+ONA does not represent equity, debt, revenue share, dividends, profit rights, or ownership in any entity. It confers no governance or control rights over any company or foundation by default.
+
+The protocol’s aim is technical utility (secure, MEV-resistant transaction ordering). Any secondary market price is not intended, promised, or managed by the developers.
+
+## 11.2 No Offering; No Expectation of Profit from Others’ Efforts
+
+The project does not plan a public token sale or fundraising via the sale of ONA. Tokens are expected to enter circulation primarily through protocol issuance and rewards for running network infrastructure, and through usage-based fees/bonds.
+
+Marketing, documentation, and community materials must avoid investment language (e.g., “returns,” “profits,” “moon,” “price targets,” “investment,” “pump/burn to raise price”). Do not suggest any buyer can expect profit from others’ efforts.
+
+There is no promise of buybacks, revenue distributions, or price maintenance, and no promise of listing on any exchange.
+
+## 11.3 Token Mechanics (Utility Only)
+
+Fees/Gas: ONA is required to pay fees for transaction execution and storage, similar in spirit to how ETH is used on Ethereum to pay gas.
+
+Base-fee burn & tips: If the protocol includes a base-fee burn (akin to EIP-1559), it is an algorithmic network rule, not an issuer action. Tips (priority fees) compensate block authors for inclusion.
+
+Bonds & Slashing: Certain actions (e.g., FSE/FFB venue bonds) require ONA bonds that may be slashed on rule violations. Bonds are service guarantees, not investments.
+
+No dividends or revenue rights: ONA does not entitle holders to dividends, profit shares, or cash flows from any entity.
+
+## 11.4 Distribution, Allocations, and Supply
+
+Issuance: Protocol-level issuance targets ~3.0% APR decaying to ~1.0% (see §4). This is an on-chain algorithm, not discretionary issuance.
+
+Allocations (if any): Any future allocations (e.g., contributor grants) will be publicly disclosed, subject to use restrictions (e.g., for development, testing, or ecosystem grants), and not marketed as investments.
+
+No implied rights: Holding ONA does not confer rights to governance, revenue, or services beyond what is implemented in the open-source protocol.
+
+## 11.5 Secondary Markets and Listings
+
+There is no commitment to seek, support, or maintain listings on centralized or decentralized exchanges.
+
+If third parties list ONA, they do so independently. Users are responsible for complying with all laws when using any exchange, including KYC/AML requirements that may apply to the exchange.
+
+## 11.6 US Regulatory Notes (High-Level)
+
+Securities laws (SEC): Whether a digital asset is a “security” depends on facts and circumstances (e.g., Howey factors). ONA is intended for consumptive use (fees, bonds) and is not marketed for profit expectations. This is not a legal determination; obtain counsel.
+
+Commodities/CFTC: Digital assets can be treated as commodities in some contexts; derivatives/trading products may invoke additional rules.
+
+Money transmission/FinCEN: Publishing open-source software or validating a network generally is not money transmission, but custodial services or fiat/asset exchange can trigger MSB rules. The project does not operate a custodial wallet, exchange, or fiat on-ramp.
+
+Sanctions/OFAC: Users and integrators must not engage with sanctioned jurisdictions/persons. Venues participating in FSE/FFB are expected to maintain their own sanctions compliance.
+
+State law (Ohio): Ohio applies federal frameworks and may impose additional licensing for custodial activities and money transmission. Do not operate custody or exchange services without proper licensing.
+
+## 11.7 Taxes
+
+Using, earning, or disposing of ONA may be taxable. No tax advice is provided here. Users are responsible for their own reporting and compliance.
+
+## 11.8 Forward-Looking Statements and Changes
+
+Roadmaps and parameters (e.g., α, β, γ, τ, W) are subject to change through transparent, open-source development processes. There is no guarantee any feature will ship or persist.
+
+The project may update protocol code and documentation; such updates do not constitute investment promises or inducements.
+
+## 11.9 Trademarks, License, and No Warranty
+
+“REZONA” and “ONA” may be used as project wordmarks. Proposed software license: Apache-2.0 (permissive, includes explicit patent grant) or MIT.
+
+Software is provided “AS IS,” without warranties or conditions of any kind. See LICENSE for details.
+
+ONA is used for fees/gas, bonds/slashing, and potentially staking/validator collateral if later enabled. These are technical functions, not investment contracts.
