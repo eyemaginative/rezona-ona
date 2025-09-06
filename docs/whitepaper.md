@@ -15,7 +15,7 @@ This document describes a standalone Substrate blockchain that introduces ONA co
 - **Ticker:** **ONA**  
 - **Consensus:** **Oscillation‑Normalized Agreement (ONA)**  
 - **Tagline:** *Stay in tune.*  
-- **Official site:** `https://eyemaginative.github.io/rezona-ona/`  
+- **Official site:** https://eyemaginative.github.io/rezona-ona/  
 - **X (Twitter):** `@rezonahub`
 
 ---
