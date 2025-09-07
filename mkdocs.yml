@@ -19,7 +19,6 @@ nav:
     - Exchange Fairness Add-On (FSE + FFB): specs/exchange-fairness-addon.md
     - Fee Router (Multi-Asset Fees): specs/fee-router.md
     - Liquidity Architecture: specs/liquidity-architecture.md
-
   - Components:
     - FFB Badge Chip: components/ffb-badge.md
 
